@@ -2,8 +2,11 @@ package ConversorMonedas;
 
 import javax.swing.JOptionPane;
 
+import ConversorTemperatura.ConvertirTemperatura;
+
 public class OpcionesConversion {
 	ConvertirMonedas monedas = new ConvertirMonedas();
+	
 	
 	public void ConvertirMonedas(double valor) {
 		String opcion = (JOptionPane.showInputDialog(null,
@@ -35,8 +38,51 @@ public class OpcionesConversion {
 		case "De pesos Colombianos a Won Coreano" : 
 			monedas.ConvertirPesosColombianosAWonCoreano(valor);
 			break;
+			
 		
 		}
+		
+		int respuesta = JOptionPane.showConfirmDialog(null, "Desea Continuar");
+		if(JOptionPane.OK_OPTION == respuesta) {
+			System.out.println("");				
+		}else {
+			JOptionPane.showMessageDialog(null, "Programa Finalizado");
+			System.exit(0);
+		}
+		
 	}
+	
+	ConvertirTemperatura Grados = new ConvertirTemperatura();
+
+	public void ConvertirTemperatura(double valorRecibidoTemperaruta) {
+		
+		String opcion = (JOptionPane.showInputDialog(null,
+				"Elige el tipo de grado que desea cambiar", "Grados",
+				JOptionPane.PLAIN_MESSAGE, null, new Object[] 
+				{"Celsius", "Fahrenhei"}, "Seleccion")).toString();
+		
+		switch(opcion) {
+		case "Fahrenhei" : 
+			Grados.ConvertirFaren(valorRecibidoTemperaruta);
+			break;
+			
+		case "Celsius" : 
+			Grados.ConvertirCelsius(valorRecibidoTemperaruta);
+			break;
+			
+		}
+		
+		
+		
+		int respuesta = JOptionPane.showConfirmDialog(null, "Desea Continuar");
+		if(JOptionPane.OK_OPTION == respuesta) {
+			System.out.println("");				
+		}else {
+			JOptionPane.showMessageDialog(null, "Programa Finalizado");
+			System.exit(0);
+		}
+		
+	}
+
 	
 }

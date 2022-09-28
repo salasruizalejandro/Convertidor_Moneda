@@ -15,6 +15,13 @@ public class Principal {
 				String input = JOptionPane.showInputDialog(null, "Ingrese un valor");
 				double valorRecibido = Double.parseDouble(input);
 				conversion.ConvertirMonedas(valorRecibido);
+				
+				
+			case "Conversor de temperatura":
+				String inputTemperatura = JOptionPane.showInputDialog(null, "Ingrese un valor");
+				double valorRecibidoTemperaruta = Double.parseDouble(inputTemperatura);
+				conversion.ConvertirTemperatura(valorRecibidoTemperaruta);			
+			
 			}
 		}
 	}
